@@ -1,0 +1,138 @@
+/* --- GLOBAL STYLES --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #fff;
+    /* Removed fixed height/flex centering from your snippet so all 3 problems can stack vertically */
+}
+
+h2 { margin-bottom: 10px; }
+hr { margin: 30px 0; border: 0; border-top: 1px solid #ccc; }
+.problem-wrapper { margin-bottom: 40px; }
+
+/* --- PROBLEM 1: ANIMATION --- */
+.p1-text { font-size: 1.1rem; color: #333; }
+
+.animation-path {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc; 
+    background-color: #f9f9f9;
+}
+
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4757; 
+    border-radius: 50%; 
+    top: 0;
+    left: 0;
+    animation: moveSquare 4s linear infinite;
+}
+
+@keyframes moveSquare {
+    0%   { top: 0; left: 0; }                               
+    25%  { top: 0; left: calc(100% - 20px); }               
+    50%  { top: calc(100% - 20px); left: calc(100% - 20px); }  
+    75%  { top: calc(100% - 20px); left: 0; }               
+    100% { top: 0; left: 0; }                               
+}
+
+/* --- PROBLEM 2: YOUR EXACT SHAPE LOGIC --- */
+.star-stage {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    /* Added margin to separate it visually in the list of problems */
+    margin-top: 20px; 
+}
+
+.star-shape {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+}
+
+.sq {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue; 
+}
+
+/* CLUSTER A: 3 Triangles (Centered at 0 degrees) */
+.rot-n4 { transform: rotate(-4deg); }
+.rot-0  { transform: rotate(0deg); }
+.rot-p4 { transform: rotate(4deg); }
+
+/* CLUSTER B: 4 Triangles (Centered approx 30 degrees) */
+.rot-22 { transform: rotate(22deg); }
+.rot-27 { transform: rotate(27deg); }
+.rot-32 { transform: rotate(32deg); }
+.rot-37 { transform: rotate(37deg); }
+
+/* CLUSTER C: 3 Triangles (Centered at 60 degrees) */
+.rot-56 { transform: rotate(56deg); }
+.rot-60 { transform: rotate(60deg); }
+.rot-64 { transform: rotate(64deg); }
+
+/* --- PROBLEM 3: FLEXBOX LAYOUT --- */
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    width: 100%;
+    max-width: 900px;
+}
+
+.header-box { background-color: #eb6e50; padding: 20px; text-align: center; }
+.header-box h3 { margin: 0; font-size: 1.5rem; }
+
+.nav-box {
+    background-color: #5d9cec;
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.content-area {
+    display: flex;
+    gap: 10px;
+    min-height: 250px;
+}
+
+.left-col {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-section-box { background-color: #70c77a; flex: 1; padding: 20px; }
+.article-box { background-color: #9e67ab; flex: 1; padding: 20px; }
+
+.sidebar-box {
+    flex: 1;
+    background-color: #f2a947;
+    padding: 20px;
+}
+
+.footer-box {
+    background-color: #3a4b5d;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.layout-container h4 { margin: 0 0 10px 0; font-size: 1.1rem; }
+.layout-container p { margin: 0; font-size: 0.9rem; line-height: 1.4; }
